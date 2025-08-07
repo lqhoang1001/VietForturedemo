@@ -2,7 +2,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: linear-gradient(90deg, #b20000cc, #ff9999cc); /* đỏ mờ gradient */
+  background: linear-gradient(90deg, #b20000cc, #ff9999cc);
   backdrop-filter: blur(6px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   display: flex;
@@ -38,14 +38,12 @@ header {
   font-weight: bold;
   text-transform: uppercase;
   color: #fff;
-  text-shadow: 1px 1px 2px #800000;
 }
 
 .slogan {
   font-size: 14px;
-  font-style: italic;
-  color: #ffcccc;
-  text-shadow: 1px 1px 1px #990000;
+  font-weight: bold;
+  color: #ffffff;
 }
 
 nav ul {
