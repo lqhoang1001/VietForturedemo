@@ -2,47 +2,108 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: "Segoe UI", sans-serif;
 }
 
 body {
-  line-height: 1.6;
-  background: #f9f9f9;
+  background: #fff;
   color: #333;
+  line-height: 1.6;
+  scroll-behavior: smooth;
 }
 
 header {
-  background: #004aad;
+  background: #b30000;
   color: white;
-  padding: 20px;
-  text-align: center;
+  padding: 15px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 4px solid #990000;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.logo-container h1 {
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: white;
+  padding: 5px;
+}
+
+nav {
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 10px;
 }
 
 nav ul {
   list-style: none;
   display: flex;
-  justify-content: center;
-  margin-top: 10px;
-  gap: 20px;
+  justify-content: flex-end;
+  gap: 30px;
+  flex-wrap: wrap;
 }
 
 nav a {
   color: white;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 500;
+  position: relative;
 }
 
-section {
-  padding: 40px 20px;
-  border-bottom: 1px solid #ddd;
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
   background: white;
-  max-width: 800px;
-  margin: auto;
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* --- Hero --- */
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+  background: #ffe5e5;
 }
 
 h2 {
-  color: #004aad;
-  margin-bottom: 10px;
+  color: #b30000;
+  font-size: 24px;
+}
+
+/* --- Sections chung --- */
+section {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #fffafa;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeSlideUp 1s forwards;
 }
 
 form {
@@ -55,20 +116,54 @@ form {
 form input,
 form select,
 form button {
-  padding: 10px;
+  padding: 12px;
   font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
 }
 
 form button {
-  background: #004aad;
+  background: #b30000;
   color: white;
   border: none;
   cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+form button:hover {
+  background: #800000;
 }
 
 footer {
-  text-align: center;
-  background: #333;
+  background: #b30000;
   color: white;
+  text-align: center;
   padding: 20px;
+  margin-top: 40px;
+}
+
+/* --- Animation --- */
+@keyframes fadeSlideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeSlideUp 1s forwards 0.3s;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav ul {
+    justify-content: center;
+  }
+
+  .logo-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 }
