@@ -7,106 +7,121 @@ header {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Segoe UI", sans-serif;
 }
 
 body {
-  background: #fff;
-  color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
-  scroll-behavior: smooth;
+  background-color: #ffffff;
+  color: #333;
 }
 
 header {
-  background: #b30000;
-  color: white;
-  padding: 15px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4px);
   display: flex;
-  flex-direction: column;
   align-items: center;
-  border-bottom: 4px solid #990000;
-  background: rgba(255, 255, 255, 0.95); /* nền mờ */
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* bóng đổ */
-  backdrop-filter: blur(4px); /* tạo hiệu ứng kính */
+  justify-content: space-between;
+  padding: 12px 24px;
   transition: all 0.3s ease;
 }
 
 .logo-container {
   display: flex;
   align-items: center;
-  gap: 15px;
-  width: 100%;
-  max-width: 1200px;
-}
-
-.logo-container h1 {
-  font-size: 20px;
-  font-weight: bold;
-  text-transform: uppercase;
+  gap: 16px;
 }
 
 .logo {
-  width: 80px; /* to ra */
+  width: 80px;
   height: 80px;
   object-fit: cover;
-  border-radius: 50%; /* làm tròn */
-  border: 2px solid white;
-  transition: transform 0.5s ease;
+  border-radius: 50%;
+  border: 2px solid #c70000; /* đỏ đậm */
   background: white;
   padding: 5px;
+  transition: transform 0.5s ease;
 }
 
 .logo:hover {
-  transform: rotate(360deg); /* hiệu ứng xoay */
+  transform: rotate(360deg);
 }
 
+.company-text h1 {
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #b20000;
+}
 
-nav {
-  width: 100%;
-  max-width: 1200px;
-  margin-top: 10px;
+.slogan {
+  font-size: 14px;
+  font-style: italic;
+  color: #ff6666;
 }
 
 nav ul {
   list-style: none;
   display: flex;
-  justify-content: flex-end;
-  gap: 30px;
-  flex-wrap: wrap;
+  gap: 24px;
 }
 
 nav a {
-  color: white;
   text-decoration: none;
-  font-weight: 500;
+  color: #b20000;
+  font-weight: bold;
   position: relative;
+  transition: color 0.3s ease;
 }
 
 nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -5px;
-  width: 0%;
+  content: '';
+  display: block;
+  width: 0;
   height: 2px;
-  background: white;
-  transition: width 0.3s ease;
+  background: #b20000;
+  transition: width 0.3s;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
 }
 
 nav a:hover::after {
   width: 100%;
 }
 
-/* --- Hero --- */
-.hero {
-  text-align: center;
-  padding: 60px 20px;
-  background: #ffe5e5;
+nav a:hover {
+  color: #e60000;
 }
 
-h2 {
-  color: #b30000;
-  font-size: 24px;
+/* --- Hero --- */
+.hero {
+  background: linear-gradient(120deg, #ff4d4d, #ffffff);
+  color: white;
+  padding: 80px 24px;
+  text-align: center;
+  animation: fadeIn 1s ease;
+}
+
+.hero h2 {
+  font-size: 28px;
+  color: #800000;
+}
+
+/* ===== Fade-in animation ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* --- Sections chung --- */
@@ -208,29 +223,28 @@ footer {
 
   .company-text h1 {
     font-size: 16px;
-    text-align: left;
   }
 
   .slogan {
     font-size: 12px;
-    text-align: left;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px;
   }
 
   nav ul {
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
+    margin-top: 10px;
   }
 
   .logo-container {
     flex-direction: row;
     align-items: center;
     gap: 10px;
-  }
-
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 10px;
   }
 }
