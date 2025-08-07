@@ -111,6 +111,22 @@ nav a:hover {
   font-size: 28px;
   color: #800000;
 }
+.hero {
+  padding: 80px 24px;
+  background: linear-gradient(120deg, #b20000, #fff0f0);
+  text-align: center;
+  animation: fadeIn 1s ease;
+}
+
+.hero h2 {
+  font-size: 28px;
+  color: #800000;
+}
+
+.hero p {
+  margin: 12px 0;
+  color: #660000;
+}
 
 /* ===== Fade-in animation ===== */
 @keyframes fadeIn {
@@ -171,6 +187,16 @@ footer {
   text-align: center;
   padding: 20px;
   margin-top: 40px;
+}
+.section {
+  padding: 60px 24px;
+  border-bottom: 1px solid #eee;
+}
+
+.section h3 {
+  font-size: 24px;
+  color: #b20000;
+  margin-bottom: 12px;
 }
 
 /* --- Animation --- */
@@ -246,5 +272,92 @@ footer {
     flex-direction: row;
     align-items: center;
     gap: 10px;
+  }
+}
+.btn-primary, .btn-secondary {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #b20000;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #ff3333;
+}
+
+.btn-secondary {
+  background-color: #fff0f0;
+  color: #b20000;
+  border: 1px solid #b20000;
+}
+
+.btn-secondary:hover {
+  background-color: #ffe5e5;
+}
+.pricing {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.price-card {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 12px;
+  background: #fffaf9;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.price-card h4 {
+  color: #b20000;
+  margin-bottom: 8px;
+}
+/* === CONTACT FORM === */
+.contact form {
+  max-width: 500px;
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact input, .contact textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+/* === FOOTER === */
+footer {
+  text-align: center;
+  padding: 24px;
+  background: #f9f9f9;
+  font-size: 14px;
+  color: #666;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .pricing {
+    flex-direction: column;
+  }
+
+  .hero h2 {
+    font-size: 22px;
+  }
+
+  .section h3 {
+    font-size: 20px;
+  }
+
+  .price-card {
+    padding: 16px;
   }
 }
