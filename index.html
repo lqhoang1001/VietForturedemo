@@ -1,100 +1,182 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Công ty Cổ phần Việt Thịnh Vượng</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vietforture – Công ty Cổ phần Việt Thịnh Vượng</title>
+  <meta name="description" content="Công ty Cổ phần Việt Thịnh Vượng – Thịnh Vượng - Vươn Tầm" />
+  <link rel="preload" href="avatar.png" as="image"/>
+  <link rel="preload" href="dragon-red.png" as="image"/>
+  <!-- Corporate Vietnamese font -->
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
- <header>
-  <div class="logo-container">
-    <a href="/" class="logo-link">
-      <img src="img/avatar.jpg" alt="Logo Công ty" class="logo"/>
-    </a>
-    <div class="company-text">
-      <h1>Công ty Cổ phần Việt Thịnh Vượng</h1>
-      <p class="slogan">Thịnh Vượng – Vươn Tầm</p>
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="container inner">
+      <a class="brand" id="brandHome" data-nav="gioithieu" href="#gioithieu" aria-label="Trang chủ">
+        <span class="logo-wrap"><img class="logo" src="avatar.png" alt="Vietforture logo" /></span>
+        <span class="brand-title">
+          <span class="company">Công ty Cổ phần Việt Thịnh Vượng</span>
+          <span class="motto">Thịnh Vượng - Vươn Tầm</span>
+        </span>
+      </a>
+
+      <!-- 4 nút như yêu cầu -->
+      <nav aria-label="Điều hướng tabs">
+        <ul class="tabs" role="tablist">
+          <li><button role="tab" class="tab is-active" data-nav="gioithieu" aria-controls="view-gioithieu">Giới Thiệu</button></li>
+          <li><button role="tab" class="tab" data-nav="dichvu" aria-controls="view-dichvu">Dịch Vụ</button></li>
+          <li><button role="tab" class="tab" data-nav="tuyendung" aria-controls="view-tuyendung">Tuyển Dụng</button></li>
+          <li><button role="tab" class="tab" data-nav="tintuc" aria-controls="view-tintuc">Tin tức</button></li>
+        </ul>
+      </nav>
     </div>
-  </div>
-  <nav>
-    <ul>
-      <li><a href="#vay">Dịch vụ Cho vay</a></li>
-      <li><a href="#kytucxa">Ký túc xá</a></li>
-      <li><a href="#email">Email doanh nghiệp</a></li>
-      <li><a href="#lienhe">Liên hệ</a></li>
-    </ul>
-  </nav>
-</header>
-<main>
-        <!-- Chèn ở đây -->
-        <h1 class="fade-in">Xin chào VietFuture</h1>
-        <img src="img/avatar.jpg" class="slide-up" alt="Avatar">
-</main>
-  <section class="hero fade-in">
-    <h2>Giải pháp tài chính – chỗ ở – hạ tầng số cho doanh nghiệp hiện đại</h2>
-  </section>
+  </header>
 
-<section id="vay" class="slide-up">
-    <h2>Dịch vụ Cho vay Tín dụng</h2>
-    <p>Giải pháp tài chính linh hoạt cho cá nhân và doanh nghiệp:</p>
-    <ul>
-      <li>✔️ Vay từ 10 triệu đến 300 triệu</li>
-      <li>✔️ Không cần thế chấp</li>
-      <li>✔️ Lãi suất từ 1.2%/tháng</li>
-    </ul>
-    <form>
-      <h3>Đăng ký vay</h3>
-      <input type="text" placeholder="Họ và tên" required />
-      <input type="tel" placeholder="Số điện thoại" required />
-      <input type="number" placeholder="Số tiền muốn vay" required />
-      <button type="submit">Gửi đăng ký</button>
-    </form>
-  </section>
+  <!-- Main: mỗi view là 1 tab (không cuộn) -->
+  <main id="app" class="container">
 
-  <section id="kytucxa" class="slide-up">
-    <h2>Cho thuê Ký túc xá</h2>
-    <p>Ký túc xá an ninh, sạch đẹp, giá cả phải chăng:</p>
-    <ul>
-      <li>📍 Quận 1 – từ 1.800.000đ/tháng</li>
-      <li>📍 Thủ Đức – từ 1.200.000đ/tháng</li>
-    </ul>
-    <form>
-      <h3>Đặt phòng</h3>
-      <input type="text" placeholder="Họ tên" required />
-      <input type="tel" placeholder="Số điện thoại" required />
-      <select required>
-        <option disabled selected>Chọn khu vực</option>
-        <option>Quận 1</option>
-        <option>Thủ Đức</option>
-      </select>
-      <button type="submit">Gửi yêu cầu</button>
-    </form>
-  </section>
+    <!-- View: Giới Thiệu -->
+    <section id="view-gioithieu" class="view is-visible" role="tabpanel">
+      <div class="panel hero">
+        <div class="hero-inner">
+          <img id="dragonBg" src="dragon-red.png" alt="" aria-hidden="true"/>
+          <h1 class="headline">VIETFORTURE XIN CHÀO</h1>
+          <div class="cta-row">
+            <!-- sang tab riêng -->
+            <button class="btn alt" data-nav="tindung">Tín Dụng</button>
+            <button class="btn outline" data-nav="kitucxa">Kí Túc Xá</button>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <section id="email" class="slide-up">
-    <h2>Email Doanh nghiệp</h2>
-    <p>Tăng uy tín và chuyên nghiệp với email theo tên miền riêng:</p>
-    <ul>
-      <li>📧 contact@tencongty.com</li>
-      <li>🔐 Google Workspace, Zoho Mail</li>
-    </ul>
-    <form>
-      <h3>Yêu cầu tư vấn</h3>
-      <input type="text" placeholder="Tên công ty" required />
-      <input type="email" placeholder="Email cá nhân" required />
-      <button type="submit">Gửi yêu cầu</button>
-    </form>
-  </section>
+    <!-- View: Dịch Vụ (đã bỏ Tín dụng/KTX ở đây) -->
+    <section id="view-dichvu" class="view" role="tabpanel">
+      <div class="panel">
+        <h2 class="view-title">Dịch Vụ</h2>
+        <div class="svc-grid">
+          <article class="svc-card">
+            <h3>Về chúng tôi</h3>
+            <ul class="kv">
+              <li><span>Công Ty</span><strong>Công ty Cổ phần Việt Thịnh Vượng</strong></li>
+              <li><span>Địa chỉ</span><strong>(Điền địa chỉ)</strong></li>
+              <li><span>Mã số thuế</span><strong>(Điền MST)</strong></li>
+            </ul>
+          </article>
+          <article class="svc-card">
+            <h3>Liên Hệ</h3>
+            <ul class="kv">
+              <li><span>Số điện thoại</span><strong>0900 000 000</strong></li>
+              <li class="stack">
+                <span>Để lại thông tin</span>
+                <form class="mini-form" onsubmit="event.preventDefault();alert('Đã gửi!');">
+                  <input required placeholder="Họ và tên" />
+                  <input required type="email" placeholder="Email" />
+                  <textarea rows="3" placeholder="Nội dung"></textarea>
+                  <button class="btn alt sm">Gửi</button>
+                </form>
+              </li>
+            </ul>
+          </article>
+          <article class="svc-card">
+            <h3>Mạng xã hội</h3>
+            <ul class="kv">
+              <li><span>Facebook</span><a class="chip" href="#" rel="noopener">/vietforture</a></li>
+              <li><span>Zalo</span><a class="chip" href="#" rel="noopener">Zalo OA</a></li>
+              <li><span>Mail</span><a class="chip" href="mailto:contact@vietforture.vn">contact@vietforture.vn</a></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
 
-  <section id="lienhe" class="slide-up">
-    <h2>Liên hệ</h2>
-    <p>🏢 123 Nguyễn Văn A, TP.HCM<br>📞 0909 000 000<br>📩 support@abcfinance.vn</p>
-  </section>
+    <!-- View: Tuyển Dụng -->
+    <section id="view-tuyendung" class="view" role="tabpanel">
+      <div class="panel">
+        <h2 class="view-title">Tuyển Dụng</h2>
+        <div class="jobs">
+          <article class="job-card">
+            <h3>Chuyên viên Kinh doanh</h3>
+            <p>Giao tiếp tốt, hiểu sản phẩm tài chính cơ bản.</p>
+            <button class="btn alt">Ứng tuyển</button>
+          </article>
+          <article class="job-card">
+            <h3>Thực tập sinh Marketing</h3>
+            <p>Năng động, tinh thần học hỏi.</p>
+            <button class="btn alt">Ứng tuyển</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- View: Tin tức -->
+    <section id="view-tintuc" class="view" role="tabpanel">
+      <div class="panel">
+        <h2 class="view-title">Tin tức</h2>
+        <div class="news list">
+          <a class="item" href="#">Mẹo tối ưu chi phí email doanh nghiệp</a>
+          <a class="item" href="#">Những điều cần biết trước khi thuê KTX</a>
+          <a class="item" href="#">Tín dụng an toàn cho sinh viên</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- View: Tín Dụng (tab riêng, ấn tượng) -->
+    <section id="view-tindung" class="view" role="tabpanel" aria-label="Tín Dụng">
+      <div class="impact-hero red">
+        <div class="impact-inner">
+          <h2>Giải pháp <span>tín dụng thế chấp</span> cho doanh nghiệp & cá nhân</h2>
+          <p>Phê duyệt nhanh • Lãi suất minh bạch • Hỗ trợ tận tâm</p>
+          <div class="cta-row">
+            <button class="btn alt lg">Yêu cầu tư vấn</button>
+            <button class="btn outline lg" data-nav="dichvu">Xem thông tin công ty</button>
+          </div>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="stat-grid">
+          <div class="stat"><strong data-counter="48">0</strong><span>giờ phê duyệt</span></div>
+          <div class="stat"><strong data-counter="500">0</strong><span>khách hàng tin dùng</span></div>
+          <div class="stat"><strong data-counter="98">0</strong><span>% hồ sơ duyệt</span></div>
+        </div>
+        <div class="steps">
+          <div class="step"><h4>1. Đăng ký</h4><p>Gửi thông tin cơ bản & tài sản đảm bảo.</p></div>
+          <div class="step"><h4>2. Thẩm định</h4><p>Định giá minh bạch, thông báo kết quả.</p></div>
+          <div class="step"><h4>3. Giải ngân</h4><p>Ký hợp đồng & giải ngân nhanh.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- View: Kí Túc Xá (tab riêng) -->
+    <section id="view-kitucxa" class="view" role="tabpanel" aria-label="Kí Túc Xá">
+      <div class="impact-hero white">
+        <div class="impact-inner">
+          <h2>Kí túc xá <span>tiện nghi</span> – chi phí tối ưu</h2>
+          <p>An ninh • Vệ sinh • Dịch vụ hỗ trợ 24/7</p>
+          <div class="cta-row">
+            <button class="btn alt lg">Đăng ký chỗ</button>
+            <button class="btn outline lg" data-nav="dichvu">Liên hệ ngay</button>
+          </div>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="feature-grid">
+          <div class="f-card"><h4>Phòng 4–6 người</h4><p>Giường tầng chắc chắn, tủ cá nhân.</p></div>
+          <div class="f-card"><h4>Tiện ích</h4><p>Wifi, giặt sấy, bếp chung, khu sinh hoạt.</p></div>
+          <div class="f-card"><h4>An ninh</h4><p>Camera, ra vào thẻ từ, bảo vệ 24/7.</p></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
 
   <footer>
-    <p>&copy; 2025 ABC Finance. All rights reserved.</p>
+    <div class="container">© <span id="y"></span> Vietforture</div>
   </footer>
-  <script src="script.js" defer></script>
+
+  <script src="script.js"></script>
 </body>
 </html>
